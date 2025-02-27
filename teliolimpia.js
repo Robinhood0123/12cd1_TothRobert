@@ -26,3 +26,10 @@ app.listen(3000, () =>  {
     console.log('A teli olimpia szervere a 3000-es porton fut.')
 }) 
 
+app.get/("/v", (req, res) => {
+    const sql = "SELECT * FROM versenyzok";
+    db.query(sql, (err, result) => {
+        if (err) return res.tatus(500).json({error: err.message})
+        res.json(results);
+    })
+})
